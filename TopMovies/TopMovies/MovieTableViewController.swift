@@ -42,15 +42,17 @@ class MovieTableViewController: UITableViewController {
             let moviesArray = json.valueForKeyPath("feed.entry") as? [NSDictionary]
             self.movies = moviesArray
             dispatch_async(dispatch_get_main_queue()) {
+                self.tableView.reloadData()
             }
         }.resume()
     }
     
-//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//    }
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.movies?.count ?? 0
+    }
     
-//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-//        
-//    }
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath)
+        return cell
+    }
 }
