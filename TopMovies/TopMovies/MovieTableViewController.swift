@@ -39,7 +39,8 @@ class MovieTableViewController: UITableViewController {
         let itunesURL = NSURL(string: "https://itunes.apple.com/us/rss/topmovies/limit=100/json")!
         NSURLSession.sharedSession().dataTaskWithRequest(NSURLRequest(URL: itunesURL)) { (data, response, error) in
             let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
-            print(json)
+            let moviesArray = json.valueForKeyPath("feed.entry") as? [NSDictionary]
+            self.movies = moviesArray
             dispatch_async(dispatch_get_main_queue()) {
             }
         }.resume()
