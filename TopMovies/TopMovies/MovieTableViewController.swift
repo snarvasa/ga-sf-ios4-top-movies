@@ -43,19 +43,11 @@ class MovieTableViewController: UITableViewController {
 //        }.resume()
     }
     
+//    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//    }
+    
 //    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 //        
 //    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.movies?.count ?? 0
-    }
 }
