@@ -53,7 +53,6 @@ class MovieTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieTableViewCell
-        
         let movie = self.movies?[indexPath.row]
         
         let title = movie?.valueForKeyPath("im:name.label") as? String
@@ -63,6 +62,12 @@ class MovieTableViewController: UITableViewController {
         cell.titleLabel?.text = title
         cell.directorLabel?.text = director
         cell.summaryLabel?.text = summary
+        
+        let posterImageURLArray = movie?.valueForKeyPath("im:image.label") as? [String]
+        let posterImageURLString = posterImageURLArray?.last
+        let posterImageURL = NSURL(string: posterImageURLString!)!
+        cell.posterImageView?.image = nil
+        cell.posterImageView?.setImageWithURL(posterImageURL)
         
         return cell
     }
