@@ -52,7 +52,18 @@ class MovieTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieTableViewCell
+        
+        let movie = self.movies?[indexPath.row]
+        
+        let title = movie?.valueForKeyPath("im:name.label") as? String
+        let director = movie?.valueForKeyPath("im:artist.label") as? String
+        let summary = movie?.valueForKeyPath("summary.label") as? String
+        
+        cell.titleLabel?.text = title
+        cell.directorLabel?.text = director
+        cell.summaryLabel?.text = summary
+        
         return cell
     }
 }
