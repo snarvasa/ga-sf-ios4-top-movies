@@ -47,6 +47,14 @@ class MovieTableViewController: UITableViewController {
         }.resume()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if let selectedIndex = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRowAtIndexPath(selectedIndex, animated: true)
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         guard let selectedIndex = self.tableView.indexPathForSelectedRow else { return }
         if let detailVC = segue.destinationViewController as? MovieDetailViewController {
