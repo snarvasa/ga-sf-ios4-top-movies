@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A3E4B5E1C21F76900C57056 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3E4B5D1C21F76900C57056 /* MovieDetailViewController.swift */; };
 		73AF07191C1CA8930020BD89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AF07181C1CA8930020BD89 /* AppDelegate.swift */; };
 		73AF071E1C1CA8930020BD89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73AF071C1C1CA8930020BD89 /* Main.storyboard */; };
 		73AF07201C1CA8930020BD89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73AF071F1C1CA8930020BD89 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		36591B20B3C59B6B3A472B6B /* Pods-TopMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopMovies.release.xcconfig"; path = "Pods/Target Support Files/Pods-TopMovies/Pods-TopMovies.release.xcconfig"; sourceTree = "<group>"; };
+		5A3E4B5D1C21F76900C57056 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
 		73AF07151C1CA8930020BD89 /* 🔝🎞.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "🔝🎞.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73AF07181C1CA8930020BD89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73AF071D1C1CA8930020BD89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				73AF07181C1CA8930020BD89 /* AppDelegate.swift */,
+				5A3E4B5D1C21F76900C57056 /* MovieDetailViewController.swift */,
 				73AF072A1C1CAB5B0020BD89 /* MovieTableViewController.swift */,
 				73AF072C1C1CCD5F0020BD89 /* MovieTableViewCell.swift */,
 				73AF071C1C1CA8930020BD89 /* Main.storyboard */,
@@ -128,6 +131,7 @@
 				TargetAttributes = {
 					73AF07141C1CA8930020BD89 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = V6ESYGU6CV;
 					};
 				};
 			};
@@ -215,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A3E4B5E1C21F76900C57056 /* MovieDetailViewController.swift in Sources */,
 				73AF072B1C1CAB5B0020BD89 /* MovieTableViewController.swift in Sources */,
 				73AF07191C1CA8930020BD89 /* AppDelegate.swift in Sources */,
 				73AF072D1C1CCD680020BD89 /* MovieTableViewCell.swift in Sources */,
@@ -332,6 +337,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TopMovies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -348,6 +354,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = TopMovies/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

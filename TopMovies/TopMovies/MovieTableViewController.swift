@@ -47,6 +47,13 @@ class MovieTableViewController: UITableViewController {
         }.resume()
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        guard let selectedIndex = self.tableView.indexPathForSelectedRow else { return }
+        if let detailVC = segue.destinationViewController as? MovieDetailViewController {
+            detailVC.movie = self.movies?[selectedIndex.row]
+        }
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.movies?.count ?? 0
     }

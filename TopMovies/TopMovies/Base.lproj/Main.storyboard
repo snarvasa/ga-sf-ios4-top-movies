@@ -19,10 +19,10 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="147"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hId-UI-FGr" id="VdP-62-gbw">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="146"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="146.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="Lag-OF-4MJ">
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Lag-OF-4MJ">
                                             <rect key="frame" x="8" y="8" width="584" height="130"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SamplePoster" translatesAutoresizingMaskIntoConstraints="NO" id="s2Y-fr-PW4">
@@ -33,24 +33,24 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="afe-2x-Czz">
-                                                    <rect key="frame" x="84" y="0.0" width="500" height="86"/>
+                                                    <rect key="frame" x="88" y="0.0" width="496" height="85"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Maze Runner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXV-9T-ssQ">
-                                                            <rect key="frame" x="0.0" y="0.0" width="99" height="20"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="99" height="19.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wes Ball" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umN-QO-v2L">
-                                                            <rect key="frame" x="0.0" y="24" width="55" height="17"/>
+                                                            <rect key="frame" x="0.0" y="23.5" width="55" height="17"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxx-7n-M7G">
-                                                            <rect key="frame" x="0.0" y="45" width="0.0" height="41"/>
+                                                            <rect key="frame" x="0.0" y="44.5" width="458.5" height="40.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -70,6 +70,7 @@
                                     <outlet property="posterImageView" destination="s2Y-fr-PW4" id="joV-UN-xE3"/>
                                     <outlet property="summaryLabel" destination="vxx-7n-M7G" id="7vr-d0-dGJ"/>
                                     <outlet property="titleLabel" destination="BXV-9T-ssQ" id="j0c-A5-KDI"/>
+                                    <segue destination="0Sh-fw-Y86" kind="show" id="dAU-2F-hQd"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -83,6 +84,92 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dxA-bU-oKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="681" y="39"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="UdY-10-Pai">
+            <objects>
+                <viewController id="0Sh-fw-Y86" customClass="MovieDetailViewController" customModule="__" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xmL-u5-5KW"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZNt-bE-OyM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RWI-ZS-ezp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUE-Ax-CE8">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2em-mT-JkI">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="429"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HqT-V4-LDY">
+                                                <rect key="frame" x="20" y="20" width="560" height="389"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SamplePoster" translatesAutoresizingMaskIntoConstraints="NO" id="ua2-sl-RbE">
+                                                        <rect key="frame" x="190" y="0.0" width="180" height="267"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="180" id="qMw-Q9-slz"/>
+                                                            <constraint firstAttribute="width" secondItem="ua2-sl-RbE" secondAttribute="height" multiplier="0.675:1" id="xFG-eg-jJ1"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" text="Die Hard" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CzS-eH-MR2">
+                                                        <rect key="frame" x="247" y="275" width="66" height="20"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="John McTiernan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTp-yr-fxt">
+                                                        <rect key="frame" x="229" y="303" width="104" height="17"/>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hu-VD-mHw">
+                                                        <rect key="frame" x="18" y="328" width="525" height="62"/>
+                                                        <string key="text">John McClane, officer of the NYPD, tries to save wife Holly Gennaro and several others, taken hostage by German terrorist Hans Gruber during a Christmas party at the Nakatomi Plaza in Los Angeles.</string>
+                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="HqT-V4-LDY" secondAttribute="bottom" constant="20" symbolic="YES" id="PNU-xn-K7N"/>
+                                            <constraint firstItem="HqT-V4-LDY" firstAttribute="leading" secondItem="2em-mT-JkI" secondAttribute="leading" constant="20" symbolic="YES" id="SEe-MK-6p3"/>
+                                            <constraint firstAttribute="trailing" secondItem="HqT-V4-LDY" secondAttribute="trailing" constant="20" symbolic="YES" id="fdO-B3-k2M"/>
+                                            <constraint firstItem="HqT-V4-LDY" firstAttribute="top" secondItem="2em-mT-JkI" secondAttribute="top" constant="20" symbolic="YES" id="ywf-PK-EZU"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="2em-mT-JkI" secondAttribute="bottom" id="29R-tm-o6b"/>
+                                    <constraint firstItem="2em-mT-JkI" firstAttribute="width" secondItem="FUE-Ax-CE8" secondAttribute="width" id="cFY-Lc-YHf"/>
+                                    <constraint firstItem="2em-mT-JkI" firstAttribute="centerX" secondItem="FUE-Ax-CE8" secondAttribute="centerX" id="muU-TR-iyN"/>
+                                    <constraint firstItem="2em-mT-JkI" firstAttribute="top" secondItem="FUE-Ax-CE8" secondAttribute="top" id="zQW-Ak-RHF"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FUE-Ax-CE8" firstAttribute="width" secondItem="RWI-ZS-ezp" secondAttribute="width" id="Jsi-ra-lip"/>
+                            <constraint firstItem="FUE-Ax-CE8" firstAttribute="centerY" secondItem="RWI-ZS-ezp" secondAttribute="centerY" id="NlF-Nr-rcU"/>
+                            <constraint firstItem="FUE-Ax-CE8" firstAttribute="centerX" secondItem="RWI-ZS-ezp" secondAttribute="centerX" id="UES-xm-sQh"/>
+                            <constraint firstItem="FUE-Ax-CE8" firstAttribute="height" secondItem="RWI-ZS-ezp" secondAttribute="height" id="UXU-68-dwP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="directorLabel" destination="DTp-yr-fxt" id="Mhf-pV-7MZ"/>
+                        <outlet property="posterImageView" destination="ua2-sl-RbE" id="GgK-Ec-4RC"/>
+                        <outlet property="summaryLabel" destination="4hu-VD-mHw" id="H8a-AL-PL3"/>
+                        <outlet property="titleLabel" destination="CzS-eH-MR2" id="2PQ-fL-yzI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A45-BZ-iTu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1427" y="39"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pPg-MT-dh2">
