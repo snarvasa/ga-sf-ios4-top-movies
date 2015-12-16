@@ -32,7 +32,9 @@ class RandomMovieViewController: UIViewController {
     //
     
     @IBOutlet weak var titleLabel: UILabel?
-    
+    @IBOutlet weak var directorLabel: UILabel?
+    @IBOutlet weak var summaryLabel: UILabel?
+    @IBOutlet weak var posterImageView: UIImageView!
     
     //
     // Put IBOutlets Above This Line
@@ -51,6 +53,7 @@ class RandomMovieViewController: UIViewController {
                 let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
                 let moviesArray = json.valueForKeyPath("feed.entry") as? [NSDictionary]
                 self.movies = moviesArray
+                print("Yay! The Movies Downloaded! 🎉")
             }
         }.resume()
     }
@@ -59,7 +62,20 @@ class RandomMovieViewController: UIViewController {
     // Put IBAction Below This Line
     //
     
-    
+    @IBAction func generateRandomMovieButtonTapped(sender: UIButton) {
+        let randomMovieIndex = self.randomIntegerWithMinimum(0, andMaximum: self.movies!.count)
+        
+        let titleString = self.titleStringForMovieAtIndex(randomMovieIndex)
+        let directorString = self.directorStringForMovieAtIndex(randomMovieIndex)
+        let summaryString = self.summaryStringForMovieAtIndex(randomMovieIndex)
+        
+        self.titleLabel?.text = titleString
+        self.directorLabel?.text = directorString
+        self.summaryLabel?.text = summaryString
+        
+        let posterImageURL = self.posterImageURLForMovieAtIndex(randomMovieIndex)
+        self.posterImageView?.setImageWithURL(posterImageURL)
+    }
     
     //
     // Put IBAction Above This Line
@@ -92,9 +108,7 @@ class RandomMovieViewController: UIViewController {
     }
     
     func randomIntegerWithMinimum(min: Int, andMaximum max: Int) -> Int {
-        let unsignedMin = UInt32(min)
-        let unsignedMax = UInt32(max)
-        let randomNumber = arc4random_uniform(unsignedMin - unsignedMax) + unsignedMin
-        return Int(randomNumber)
+        let randomNumber = Int(arc4random_uniform(UInt32((max - min) + 1))) + min
+        return randomNumber
     }
 }
