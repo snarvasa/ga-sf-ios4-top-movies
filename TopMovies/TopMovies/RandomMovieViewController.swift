@@ -63,7 +63,8 @@ class RandomMovieViewController: UIViewController {
     //
     
     @IBAction func generateRandomMovieButtonTapped(sender: UIButton) {
-        let randomMovieIndex = self.randomIntegerWithMinimum(0, andMaximum: self.movies!.count)
+        let max = self.movies!.count - 1
+        let randomMovieIndex = self.randomIntegerWithMinimum(0, andMaximum: max)
         
         let titleString = self.titleStringForMovieAtIndex(randomMovieIndex)
         let directorString = self.directorStringForMovieAtIndex(randomMovieIndex)
