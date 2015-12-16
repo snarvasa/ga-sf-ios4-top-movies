@@ -51,6 +51,7 @@ class RandomMovieViewController: UIViewController {
                 let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.AllowFragments) as! NSDictionary
                 let moviesArray = json.valueForKeyPath("feed.entry") as? [NSDictionary]
                 self.movies = moviesArray
+                print("Yay! The Movies Downloaded! 🎉")
             }
         }.resume()
     }
@@ -92,9 +93,7 @@ class RandomMovieViewController: UIViewController {
     }
     
     func randomIntegerWithMinimum(min: Int, andMaximum max: Int) -> Int {
-        let unsignedMin = UInt32(min)
-        let unsignedMax = UInt32(max)
-        let randomNumber = arc4random_uniform(unsignedMin - unsignedMax) + unsignedMin
-        return Int(randomNumber)
+        let randomNumber = Int(arc4random_uniform(UInt32((max - min) + 1))) + min
+        return randomNumber
     }
 }
