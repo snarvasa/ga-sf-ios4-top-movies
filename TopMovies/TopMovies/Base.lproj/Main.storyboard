@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -34,24 +35,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="SamplePoster" translatesAutoresizingMaskIntoConstraints="NO" id="34H-5Z-g7I">
-                                <rect key="frame" x="70" y="72" width="180" height="267"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="180" id="FdO-gG-LMe"/>
-                                    <constraint firstAttribute="width" secondItem="34H-5Z-g7I" secondAttribute="height" multiplier="0.675:1" id="XFl-U6-PSw"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" fixedFrame="YES" text="Die Hard" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e22-dm-thQ">
-                                <rect key="frame" x="127" y="361" width="66" height="20"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hsP-JC-apc">
+                                <rect key="frame" x="16" y="76" width="288" height="456"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SamplePoster" translatesAutoresizingMaskIntoConstraints="NO" id="34H-5Z-g7I">
+                                        <rect key="frame" x="54" y="0.0" width="180" height="267"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="FdO-gG-LMe"/>
+                                            <constraint firstAttribute="width" secondItem="34H-5Z-g7I" secondAttribute="height" multiplier="0.675:1" id="XFl-U6-PSw"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="253" misplaced="YES" text="Die Hard" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e22-dm-thQ">
+                                        <rect key="frame" x="111" y="275" width="66" height="20"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Awesome Director" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FZW-Eu-JgA">
+                                        <rect key="frame" x="85" y="303" width="118" height="17"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBO-CB-auI">
+                                        <rect key="frame" x="5" y="328" width="279" height="83"/>
+                                        <string key="text">This is a lengthy movie summary. This is a lengthy movie summary. This is a lengthy movie summary. This is a lengthy movie summary. </string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUL-eD-1Sp">
+                                        <rect key="frame" x="76" y="418" width="136" height="38"/>
+                                        <color key="backgroundColor" red="0.1764705882" green="0.70588235290000001" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
+                                        <state key="normal" title="Change Movie">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapChangeMovieButton:" destination="UmB-MY-kVW" eventType="touchUpInside" id="ECc-h3-JJr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hsP-JC-apc" firstAttribute="leading" secondItem="6pi-k3-xIb" secondAttribute="leadingMargin" id="A3g-eI-abw"/>
+                            <constraint firstItem="hsP-JC-apc" firstAttribute="top" secondItem="6pi-k3-xIb" secondAttribute="topMargin" constant="76" id="ch9-Wu-YHq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hsP-JC-apc" secondAttribute="trailing" id="uJ7-y1-FP2"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="d6g-H4-cgH"/>
                     <connections>
+                        <outlet property="directorLabel" destination="FZW-Eu-JgA" id="CUc-0Z-mId"/>
+                        <outlet property="posterImageView" destination="34H-5Z-g7I" id="oe2-iD-QgI"/>
+                        <outlet property="summaryLabel" destination="PBO-CB-auI" id="Xa1-LN-RgD"/>
                         <outlet property="titleLabel" destination="e22-dm-thQ" id="glB-fz-X5i"/>
                     </connections>
                 </viewController>

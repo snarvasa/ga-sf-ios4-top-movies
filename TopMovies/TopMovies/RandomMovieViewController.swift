@@ -28,17 +28,19 @@ import UIKit
 class RandomMovieViewController: UIViewController {
     
     //
-    // Put IBOutlets Below This Line
-    //
+    // Put IBOutlets Below This Line. It's useful to have all of the different functions / elements grouped together
+    // in the same place
     
     @IBOutlet weak var titleLabel: UILabel?
-    
+    @IBOutlet weak var directorLabel: UILabel?
+    @IBOutlet weak var summaryLabel: UILabel? // Exclamation point is here by default. Change to question marks.
+    @IBOutlet weak var posterImageView: UIImageView?
     
     //
     // Put IBOutlets Above This Line
     //
     
-    var movies: [NSDictionary]?
+    var movies: [NSDictionary]? // this is an array of NSDictionary aka. a Hash
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +63,24 @@ class RandomMovieViewController: UIViewController {
     //
     
     
+    @IBAction func didTapChangeMovieButton(sender: AnyObject) {
+        let max = self.movies!.count - 1 // this counts how many items are within the array
+        let randomNumber = self.randomIntegerWithMinimum(1, andMaximum: max)
+        
+        let title = self.titleStringForMovieAtIndex(randomNumber)
+        let director = self.directorStringForMovieAtIndex(randomNumber)
+        let summary = self.summaryStringForMovieAtIndex(randomNumber)
+        
+        self.titleLabel?.text = title               /// this is called optional chanining
+        self.directorLabel?.text = director
+        self.summaryLabel?.text = summary
+        
+        let posterImageURL = self.posterImageURLForMovieAtIndex(randomNumber)
+        self.posterImageView?.image = nil
+        self.posterImageView?.setImageWithURL(posterImageURL)
+        
+        print("title = \(title)")
+    }
     
     //
     // Put IBAction Above This Line
